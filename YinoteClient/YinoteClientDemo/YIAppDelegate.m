@@ -16,7 +16,16 @@
 #import "YIReqNotebookCreate.h"
 #import "YIReqNotebookUpdate.h"
 #import "YIReqNotebookDelete.h"
+#import "YITagsClient.h"
+#import "YIReqTagCreate.h"
+#import "YIReqTagQuery.h"
+#import "YIReqTagUpdate.h"
 
+static  NSString *token =@"633e7a8c2019404f894d7f8e60dd4134";
+static  NSString *noteId =@"58c632a28d3648f1b7c582ad";
+@interface YIAppDelegate()
+
+@end
 @implementation YIAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -27,82 +36,11 @@
     [self.window makeKeyAndVisible];
     NSString *token = @"633e7a8c2019404f894d7f8e60dd4134";
     NSLog(@"________________textExample start__________________");
-    //获取用户信息
-    [YIUserInfoClient getUserInfoWithToken:token rspBlock:^(id datas, NSError *error, YIApiError *apiError) {
-        NSLog(@"+++++++++++%@",datas);
-    }];
-    //更新用户信息
-    YIMUserInfo *userInfo = [[YIMUserInfo alloc] init];
-    [userInfo setNickname:@"td705"];
-    [userInfo setSignature:@"td705hojo"];
-    [YIUserInfoClient updateUserInfo:userInfo accessToken:token rspBlock:^(id datas, NSError *error, YIApiError *apiError) {
-        NSLog(@"+++++++++++%@",datas);
-    }];
-    //获取同步状态
-    [YISyncClient getSyncStateWithToken:token rspBlock:^(id datas, NSError *error, YIApiError *apiError) {
-        NSLog(@"+++++++++++%@",datas);
-    }];
-    //获取同步数据块
+    
+    [self tagSide];
 
-    [YISyncClient getSyncChunkWithAfterUsn:0 maxEntries:10 accessToken:token rspBlock:^(id datas, NSError *error, YIApiError *apiError) {
-        NSLog(@"+++++++++++%@",datas);
-    }];
+    
 
-    //查询笔记
-    [YINotesClient queryNoteWithModel:nil accessToken:token rspBlock:^(id datas, NSError *error, YIApiError *apiError) {
-        NSLog(@"+++++++++++%@",datas);
-    }];
-    //
-    NSString *noteId = @"58c632a28d3648f1b7c582ad";
-    //笔记评论数
-    [YINotesClient getNoteDiscussionCountWithNoteId:noteId accessToken:token rspBlock:^(id datas, NSError *error, YIApiError *apiError) {
-        NSLog(@"+++++++++++%@",datas);
-    }];
-    //单条笔记查询，查询结果不包含content，内容显示在htmlcontent中
-    [YINotesClient getNoteContentWithNoteId:noteId Token:token rspBlock:^(id datas, NSError *error, YIApiError *apiError) {
-        NSLog(@"+++++++++++%@",datas);
-    }];
-    //最近5条
-    [YINotesClient getLatest5notesWithToken:token rspBlock:^(id datas, NSError *error, YIApiError *apiError) {
-        NSLog(@"+++++++++++%@",datas);
-    }];
-    //添加评论
-    YIReqDiscussionCreate *create = [[YIReqDiscussionCreate alloc] init];
-    create.content = @"content add test!!";
-    [YINotesClient addNoteDiscussionWithModel:create noteId:noteId accessToken:token rspBlock:^(id datas, NSError *error, YIApiError *apiError) {
-        NSLog(@"+++++++++++%@",datas);
-    }];
-    //
-    [YINotebooksClient queryNotebookWithModel:nil accessToken:token rspBlock:^(id datas, NSError *error, YIApiError *apiError) {
-        NSLog(@"+++++++++++%@",datas);
-//        {
-//            id = 53a1aa934ee6232d00000000;
-//            knowledgeGroup = 529532b684aea5608713ca95;
-//            name = "\U98ce\U9761\U4e00\U65f6";
-//            serviceCreated = 1403105528030;
-//            serviceUpdated = 1403105528030;
-//            usn = 321;
-//        }
-    }];
-    YIReqNotebookCreate *createbok = [[YIReqNotebookCreate alloc] init];
-    createbok.id_ = @"53a1aa934ee6232d00000001";
-    createbok.name = @"api book";
-//    [YINotebooksClient createNotebookWithModel:createbok accessToken:token rspBlock:^(id datas, NSError *error, YIApiError *apiError) {
-//       NSLog(@"+++++++++++%@",datas);
-//    }];
-    YIReqNotebookUpdate *updatebok = [[YIReqNotebookUpdate alloc] init];
-    updatebok.name = @"api book 1";
-    updatebok.usn = 378;
-//    [YINotebooksClient updateNotebookWithModel:updatebok notebookId:createbok.id_ accessToken:token rspBlock:^(id datas, NSError *error, YIApiError *apiError) {
-//        NSLog(@"+++++++++++%@",datas);
-//    }];
-    YIReqNotebookDelete *deletebok = [[YIReqNotebookDelete alloc] init];
-    deletebok.usn = 382;
-    deletebok.expunged = [[NSDate date] timeIntervalSince1970] * 1000;
-//    [YINotebooksClient deleteNotebookWithModel:deletebok notebookId:createbok.id_ accessToken:token rspBlock:^(id datas, NSError *error, YIApiError *apiError) {
-//        NSLog(@"+++++++++++%@",datas);
-//        //384 usn
-//    }];
     NSLog(@"________________textExample end____________________");
     return YES;
 }
@@ -133,5 +71,112 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+- (void)userInfoSide {
+    //获取用户信息
+    [YIUserInfoClient getUserInfoWithToken:token rspBlock:^(id datas, NSError *error, YIApiError *apiError) {
+        NSLog(@"+++++++++++%@",datas);
+    }];
+    //更新用户信息
+    YIMUserInfo *userInfo = [[YIMUserInfo alloc] init];
+    [userInfo setNickname:@"td705"];
+    [userInfo setSignature:@"td705hojo"];
+    [YIUserInfoClient updateUserInfo:userInfo accessToken:token rspBlock:^(id datas, NSError *error, YIApiError *apiError) {
+        NSLog(@"+++++++++++%@",datas);
+    }];
+}
 
+- (void)syncStateSide {
+    //获取同步状态
+    [YISyncClient getSyncStateWithToken:token rspBlock:^(id datas, NSError *error, YIApiError *apiError) {
+        NSLog(@"+++++++++++%@",datas);
+    }];
+    //获取同步数据块
+    
+    [YISyncClient getSyncChunkWithAfterUsn:0 maxEntries:10 accessToken:token rspBlock:^(id datas, NSError *error, YIApiError *apiError) {
+        NSLog(@"+++++++++++%@",datas);
+    }];
+}
+- (void)noteSide {
+    //查询笔记
+    [YINotesClient queryNoteWithModel:nil accessToken:token rspBlock:^(id datas, NSError *error, YIApiError *apiError) {
+        NSLog(@"+++++++++++%@",datas);
+    }];
+    //
+    NSString *noteId = @"58c632a28d3648f1b7c582ad";
+    //笔记评论数
+    [YINotesClient getNoteDiscussionCountWithNoteId:noteId accessToken:token rspBlock:^(id datas, NSError *error, YIApiError *apiError) {
+        NSLog(@"+++++++++++%@",datas);
+    }];
+    //单条笔记查询，查询结果不包含content，内容显示在htmlcontent中
+    [YINotesClient getNoteContentWithNoteId:noteId Token:token rspBlock:^(id datas, NSError *error, YIApiError *apiError) {
+        NSLog(@"+++++++++++%@",datas);
+    }];
+    //最近5条
+    [YINotesClient getLatest5notesWithToken:token rspBlock:^(id datas, NSError *error, YIApiError *apiError) {
+        NSLog(@"+++++++++++%@",datas);
+    }];
+    //添加评论
+    YIReqDiscussionCreate *create = [[YIReqDiscussionCreate alloc] init];
+    create.content = @"content add test!!";
+    [YINotesClient addNoteDiscussionWithModel:create noteId:noteId accessToken:token rspBlock:^(id datas, NSError *error, YIApiError *apiError) {
+        NSLog(@"+++++++++++%@",datas);
+    }];
+}
+- (void)notebookSide {
+    //笔记本查询
+    [YINotebooksClient queryNotebookWithModel:nil accessToken:token rspBlock:^(id datas, NSError *error, YIApiError *apiError) {
+        NSLog(@"+++++++++++%@",datas);
+        //        {
+        //            id = 53a1aa934ee6232d00000000;
+        //            knowledgeGroup = 529532b684aea5608713ca95;
+        //            name = "\U98ce\U9761\U4e00\U65f6";
+        //            serviceCreated = 1403105528030;
+        //            serviceUpdated = 1403105528030;
+        //            usn = 321;
+        //        }
+    }];
+    //笔记本创建
+    YIReqNotebookCreate *createbok = [[YIReqNotebookCreate alloc] init];
+    createbok.id_ = @"53a1aa934ee6232d00000001";
+    createbok.name = @"api book";
+    //    [YINotebooksClient createNotebookWithModel:createbok accessToken:token rspBlock:^(id datas, NSError *error, YIApiError *apiError) {
+    //       NSLog(@"+++++++++++%@",datas);
+    //    }];
+    //笔记本更新
+    YIReqNotebookUpdate *updatebok = [[YIReqNotebookUpdate alloc] init];
+    updatebok.name = @"api book 1";
+    updatebok.usn = 378;
+    //    [YINotebooksClient updateNotebookWithModel:updatebok notebookId:createbok.id_ accessToken:token rspBlock:^(id datas, NSError *error, YIApiError *apiError) {
+    //        NSLog(@"+++++++++++%@",datas);
+    //    }];
+    //笔记本删除
+    YIReqNotebookDelete *deletebok = [[YIReqNotebookDelete alloc] init];
+    deletebok.usn = 382;
+    deletebok.expunged = [[NSDate date] timeIntervalSince1970] * 1000;
+    //    [YINotebooksClient deleteNotebookWithModel:deletebok notebookId:createbok.id_ accessToken:token rspBlock:^(id datas, NSError *error, YIApiError *apiError) {
+    //        NSLog(@"+++++++++++%@",datas);
+    //        //384 usn
+    //    }];
+}
+- (void)tagSide {
+    [YITagsClient queryTagWithModel:nil accessToken:token rspBlock:^(id datas, NSError *error, YIApiError *apiError) {
+        NSLog(@"+++++++++++%@",datas);
+//        id = 5336d15a97fdb3dd00000001;
+//        name = Eee;
+//        usn = 236;
+
+    }];
+    YIReqTagCreate *create = [[YIReqTagCreate alloc] init];
+    create.id_ = @"53a1aa934ee6232d10000004";
+    create.name = @"apitag";
+    [YITagsClient createTagWithModel:create accessToken:token rspBlock:^(id datas, NSError *error, YIApiError *apiError) {
+        NSLog(@"+++++++++++%@",datas);
+    }];
+    YIReqTagUpdate *update = [[YIReqTagUpdate alloc] init];
+    update.usn = 236;
+    update.name = @"Eee1";
+    [YITagsClient updateNotebookWithModel:update tagId:@"5336d15a97fdb3dd00000001" accessToken:token rspBlock:^(id datas, NSError *error, YIApiError *apiError) {
+        NSLog(@"+++++++++++%@",datas);
+    }];
+}
 @end

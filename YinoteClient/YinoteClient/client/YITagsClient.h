@@ -40,10 +40,12 @@
  *  更新笔记本
  *
  *  @param paramModel   标签更新模型YIReqTagUpdate
+ *  @param tagId        标签 id
  *  @param access_token 认证标示
  *  @param block        请求返回块
  */
 + (void)updateNotebookWithModel:(YIReqTagUpdate*)paramModel
+                          tagId:(NSString*)tagId
                     accessToken:(NSString*)access_token
                        rspBlock:(YiRspBlock)block;
 @end

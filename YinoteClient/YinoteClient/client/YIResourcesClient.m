@@ -21,13 +21,13 @@
 }
 
 //创建资源
-+ (void)createTagWithModel:(YIReqResourceCreate*)paramModel
++ (void)createResourceWithModel:(YIReqResourceCreate*)paramModel
                accessToken:(NSString*)access_token
                   rspBlock:(YiRspBlock)block {
-    [self createTagWithMap:[paramModel genReqModel] accessToken:access_token rspBlock:block];
+    [self createResourceWithMap:[paramModel genReqModel] accessToken:access_token rspBlock:block];
 }
 
-+ (void)createTagWithMap:(NSDictionary*)paramMap
++ (void)createResourceWithMap:(NSDictionary*)paramMap
                accessToken:(NSString*)access_token
                   rspBlock:(YiRspBlock)block {
     NSString *urlstr = [NSString stringWithFormat:@"/resources?access_token=%@",access_token];

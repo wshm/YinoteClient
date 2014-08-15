@@ -33,7 +33,7 @@
  *  @param access_token 认证标示
  *  @param block        请求返回块
  */
-+ (void)createTagWithModel:(YIReqResourceCreate*)paramModel
++ (void)createResourceWithModel:(YIReqResourceCreate*)paramModel
                accessToken:(NSString*)access_token
                   rspBlock:(YiRspBlock)block;
 

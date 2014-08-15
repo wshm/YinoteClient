@@ -79,7 +79,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "249"
             endingLineNumber = "249"
-            landmarkName = "+getNoteDiscussionCountWithNoteId:accessToken:rspBlock:"
+            landmarkName = "+addNoteDiscussionWithModel:noteId:accessToken:rspBlock:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -90,59 +90,153 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YinoteClientDemo/YIAppDelegate.m"
-            timestampString = "429630584.860956"
+            timestampString = "429786057.809035"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "-application:didFinishLaunchingWithOptions:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YinoteClientDemo/YIAppDelegate.m"
-            timestampString = "429630608.733937"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
-            landmarkName = "-application:didFinishLaunchingWithOptions:"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
+            landmarkName = "-tagSide"
             landmarkType = "5">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "-[YIAppDelegate application:didFinishLaunchingWithOptions:]"
+                  symbolName = "-[YIAppDelegate tagSide]"
                   moduleName = "YinoteClientDemo"
-                  urlString = "file:///Users/LSZ/git/YinoteClient/YinoteClient/YinoteClientDemo/YIAppDelegate.m"
-                  timestampString = "429630838.167834"
+                  urlString = "file:///Users/LSZ/GitHub/YinoteClient/YinoteClient/YinoteClientDemo/YIAppDelegate.m"
+                  timestampString = "429790015.623768"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "67"
-                  endingLineNumber = "67"
-                  offsetFromSymbolStart = "1523">
+                  startingLineNumber = "162"
+                  endingLineNumber = "162"
+                  offsetFromSymbolStart = "118">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__59-[YIAppDelegate application:didFinishLaunchingWithOptions:]_block_invoke_9"
+                  symbolName = "__24-[YIAppDelegate tagSide]_block_invoke"
                   moduleName = "YinoteClientDemo"
-                  urlString = "file:///Users/LSZ/git/YinoteClient/YinoteClient/YinoteClientDemo/YIAppDelegate.m"
-                  timestampString = "429630838.168134"
+                  urlString = "file:///Users/LSZ/GitHub/YinoteClient/YinoteClient/YinoteClientDemo/YIAppDelegate.m"
+                  timestampString = "429790015.62396"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "67"
-                  endingLineNumber = "67"
+                  startingLineNumber = "162"
+                  endingLineNumber = "162"
                   offsetFromSymbolStart = "123">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YinoteClientDemo/YIAppDelegate.m"
+            timestampString = "429786611.147116"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "163"
+            endingLineNumber = "163"
+            landmarkName = "-tagSide"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YinoteClientDemo/YIAppDelegate.m"
+            timestampString = "429786611.147116"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
+            landmarkName = "-tagSide"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YinoteClientDemo/YIAppDelegate.m"
+            timestampString = "429786931.514724"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "172"
+            endingLineNumber = "172"
+            landmarkName = "-tagSide"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[YIAppDelegate tagSide]"
+                  moduleName = "YinoteClientDemo"
+                  urlString = "file:///Users/LSZ/GitHub/YinoteClient/YinoteClient/YinoteClientDemo/YIAppDelegate.m"
+                  timestampString = "429790015.624702"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "172"
+                  endingLineNumber = "172"
+                  offsetFromSymbolStart = "298">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__24-[YIAppDelegate tagSide]_block_invoke_2"
+                  moduleName = "YinoteClientDemo"
+                  urlString = "file:///Users/LSZ/GitHub/YinoteClient/YinoteClient/YinoteClientDemo/YIAppDelegate.m"
+                  timestampString = "429790015.625029"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "172"
+                  endingLineNumber = "172"
+                  offsetFromSymbolStart = "123">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YinoteClient/client/YIBaseClient.m"
+            timestampString = "429786995.400723"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "+post:parameters:rspBlock:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YinoteClientDemo/YIAppDelegate.m"
+            timestampString = "429787216.205837"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "179"
+            endingLineNumber = "179"
+            landmarkName = "-tagSide"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

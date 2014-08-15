@@ -35,6 +35,7 @@
             block(responseObject,nil,nil);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        /*{"error":"TagNameConflict","error_description":"标签名称[apitag]重复","error_uri":"/api/tags.json?access_token=633e7a8c2019404f894d7f8e60dd4134","request_id":"633e7a8c2019404f894d7f8e60dd4134"}*/
         if (block) {
             block(nil,error,nil);
         }
