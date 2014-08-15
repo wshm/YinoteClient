@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>YinoteClient.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+		<key>YinoteClientDemo.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>YinoteClientTests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>2DAB2814199272C000A314C8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2DAB282B199272C000A314C8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2DBAAE2C1981FD540011C5C7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2DBAAE3C1981FD550011C5C7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
